@@ -20,7 +20,7 @@
                 "dif_population_2006_2012": 233773.0,
                 "dif_population_2012_2018": 171184.0,
                 "reg_code_insee": "75",
-                "taux_augmentation": "7"
+                "taux_augmentation": 7
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -2632,7 +2632,7 @@
                 "dif_population_2006_2012": 315892.0,
                 "dif_population_2012_2018": 258638.0,
                 "reg_code_insee": "76",
-                "taux_augmentation": "10"
+                "taux_augmentation": 10
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -4692,7 +4692,7 @@
                 "dif_population_2006_2012": 337980.0,
                 "dif_population_2012_2018": 299195.0,
                 "reg_code_insee": "84",
-                "taux_augmentation": "8"
+                "taux_augmentation": 8
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -7118,7 +7118,7 @@
                 "dif_population_2006_2012": 366104.0,
                 "dif_population_2012_2018": 314945.0,
                 "reg_code_insee": "11",
-                "taux_augmentation": "6"
+                "taux_augmentation": 6
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -7882,7 +7882,7 @@
                 "dif_population_2006_2012": 54908.0,
                 "dif_population_2012_2018": 4721.0,
                 "reg_code_insee": "28",
-                "taux_augmentation": "2"
+                "taux_augmentation": 2
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -9130,7 +9130,7 @@
                 "dif_population_2006_2012": 44019.0,
                 "dif_population_2012_2018": 9267.0,
                 "reg_code_insee": "24",
-                "taux_augmentation": "2"
+                "taux_augmentation": 2
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -10574,7 +10574,7 @@
                 "dif_population_2006_2012": 37353.0,
                 "dif_population_2012_2018": -9007.0,
                 "reg_code_insee": "27",
-                "taux_augmentation": "1"
+                "taux_augmentation": 1
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -12242,7 +12242,7 @@
                 "dif_population_2006_2012": 60099.0,
                 "dif_population_2012_2018": 31010.0,
                 "reg_code_insee": "32",
-                "taux_augmentation": "2"
+                "taux_augmentation": 2
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -13414,7 +13414,7 @@
                 "dif_population_2006_2012": 22139.0,
                 "dif_population_2012_2018": 22297.0,
                 "reg_code_insee": "94",
-                "taux_augmentation": "13"
+                "taux_augmentation": 13
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -14106,7 +14106,7 @@
                 "dif_population_2006_2012": 58863.0,
                 "dif_population_2012_2018": 1434.0,
                 "reg_code_insee": "44",
-                "taux_augmentation": "1"
+                "taux_augmentation": 1
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -15970,7 +15970,7 @@
                 "dif_population_2006_2012": 182201.0,
                 "dif_population_2012_2018": 148809.0,
                 "reg_code_insee": "52",
-                "taux_augmentation": "9"
+                "taux_augmentation": 9
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -17426,7 +17426,7 @@
                 "dif_population_2006_2012": 142563.0,
                 "dif_population_2012_2018": 98317.0,
                 "reg_code_insee": "53",
-                "taux_augmentation": "7"
+                "taux_augmentation": 7
             },
             "geometry": {
                 "type": "MultiPolygon",
@@ -18994,7 +18994,7 @@
                 "dif_population_2006_2012": 120344.0,
                 "dif_population_2012_2018": 117256.0,
                 "reg_code_insee": "93",
-                "taux_augmentation": "5"
+                "taux_augmentation": 5
             },
             "geometry": {
                 "type": "MultiPolygon",

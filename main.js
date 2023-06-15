@@ -21,7 +21,7 @@ const map = new Map({
   ],
   view: new View({
     center: [222500, 5900000],
-    zoom: 5,
+    zoom: 6,
   }),
 });
 const layerGroup1 = new LayerGroup();
@@ -112,7 +112,7 @@ var path_artif = "geodata/artificialisation.geojson";
 var option_artif = "taux_augmentation";
 var option2_artif = "nouveau_reg";
 var title_artif = "artificialisation";
-var colors_artif = ["#D6DBDF", "#AEB6BF", "#85929E ", "#5D6D7E", "#2E4053"];
+var colors_artif = ["#E1F5FE", "#B3E5FC", "#81D4FA", "#039BE5 ", "#01579B"];
 var artificialisation = loadGeoJSON(
   path_artif,
   option_artif,
@@ -126,7 +126,7 @@ var path_pop = "geodata/population.geojson";
 var option_pop = "taux_augmentation";
 var option2_pop = "region";
 var title_pop = "population";
-var colors_pop = ["#D6EAF8", "#AED6F1", "#85C1E9", "#5DADE2", "#2E86C1"];
+var colors_pop = ["#FFCCBC", "#FFAB91", "#FF8A65", "#F4511E", "#BF360C"];
 
 var population = loadGeoJSON(
   path_pop,
@@ -140,11 +140,12 @@ var population = loadGeoJSON(
 map.addLayer(layerGroup1);
 map.addLayer(layerGroup2);
 
-var bindLayerButtonToggle = function (btnId, layer) {
-  document.getElementById(btnId).onclick = function () {
-    layer.setVisible(!layer.getVisible());
+var bindLayerCheckboxToggle = function (checkboxId, layer) {
+  var checkbox = document.getElementById(checkboxId);
+  checkbox.onchange = function () {
+    layer.setVisible(checkbox.checked);
   };
 };
 
-bindLayerButtonToggle("artif", layerGroup1);
-bindLayerButtonToggle("pop", layerGroup2);
+bindLayerCheckboxToggle("artif", layerGroup1);
+bindLayerCheckboxToggle("pop", layerGroup2);

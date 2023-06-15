@@ -13,10 +13,16 @@
 
 <body>
   <div class="flex-container">
-
+    
     <div class="map-container">
-      <button id="pop">Population</button>
-      <button id="artif">Artificialisation</button>
+      <div class="button-container">
+        <input type="checkbox" id="artif" checked> 
+        <label for="artif">Artificialisation des sols</label>
+        <input type="checkbox" id="pop" checked> 
+        <label for="pop">Population</label>
+        <div>Cartographie de la population et de l'artificialisation</div>
+      </div>
+
       <div id="map"></div>
       <div id="popup" class="ol-popup">
         <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -34,6 +40,10 @@
     <div class="linechart-container">
       <canvas id="line_chart_corse"></canvas>
       <canvas id="line_chart_grandest"></canvas>
+    </div>
+    <div class="polarchart-container">
+      <canvas id="polar_chart_corse"></canvas>
+      <canvas id="polar_chart_grandest"></canvas>
     </div>
     
   </div>

@@ -29,7 +29,7 @@ async function CreatebarChart(file_path, axe_x, axe_y, chart, label, color) {
           label: label,
           data: chartData,
           backgroundColor: color,
-          borderColor: color,
+          borderColor: "#fffff",
           borderWidth: 1,
         },
       ],
@@ -45,8 +45,8 @@ async function CreatebarChart(file_path, axe_x, axe_y, chart, label, color) {
   });
 }
 // declare variables for createBarrChart
-var color_artif = "#566573";
-var color_pop = "#2874A6 ";
+var color_artif =  "rgba(133, 193, 233, 0.5)";
+var color_pop = "rgba(245, 167, 167, 0.5)";
 var path_artif = "geodata/artificialisation.geojson";
 var path_pop = "geodata/population.geojson";
 var axe_x_pop = "taux_augmentation";
@@ -77,7 +77,8 @@ async function CreateLineChart(
   chart,
   label_1,
   label_2,
-  region_range
+  region_range,
+  title
 ) {
   const response1 = await fetch(file_path_1);
   const response2 = await fetch(file_path_2);
@@ -89,26 +90,24 @@ async function CreateLineChart(
   const art2006 = data2.features[region_range].properties["sum_annee_2006"];
   const art2012 = data2.features[region_range].properties["sum_annee_2012"];
   const art2018 = data2.features[region_range].properties["sum_annee_2018"];
-  const art2006_norm = art2006/100;
-  const art2012_norm = art2012/100;
-  const art2018_norm = art2018/100;
+  const art2006_norm = art2006 / 100;
+  const art2012_norm = art2012 / 100;
+  const art2018_norm = art2018 / 100;
 
   chartData1.push(art2006_norm);
   chartData1.push(art2012_norm);
   chartData1.push(art2018_norm);
   const chartLabels = ["2006", "2012", "2018"];
-  const pop2006 = data1.features[region_range].properties["total_population_2006"];
-  const pop2012 = data1.features[region_range].properties["total_population_2012"];
+  const pop2006 =
+    data1.features[region_range].properties["total_population_2006"];
+  const pop2012 =
+    data1.features[region_range].properties["total_population_2012"];
   const pop2018 = data1.features[region_range].properties["population_2018"];
 
   chartData2.push(pop2006);
   chartData2.push(pop2012);
   chartData2.push(pop2018);
-  console.log(data1);
-  console.log(data2);
-  console.log(data2.features[region_range].properties["region"]);
   const chartLabels1 = ["2006", "2012", "2018"];
-  console.log(document.getElementById(chart));
   const ctx = document.getElementById(chart).getContext("2d");
 
   // Creating the chart
@@ -120,21 +119,32 @@ async function CreateLineChart(
         {
           label: label_1,
           data: chartData1,
-          borderColor: "rgba(75, 192, 192, 1)",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderWidth: 1,
+          borderColor: "#FD9696 ",
+          backgroundColor: "rgba(240, 141, 92 , 0.5)",
+          borderWidth: 2.5,
+          fill: true,
         },
         {
           label: label_2,
           data: chartData2,
-          borderColor: "rgba(192, 75, 192, 1)",
-          backgroundColor: "rgba(192, 75, 192, 0.2)",
-          borderWidth: 1,
+          borderColor: "#1B4F72",
+          backgroundColor: "rgba(133, 193, 233, 0.5)",
+          borderWidth: 2.5,
+          fill: true,
         },
       ],
     },
     options: {
       responsive: true,
+      plugins: {
+        title: {
+          display: true,
+          text: title
+        },
+        tooltip: {
+          mode: "index",
+        },
+      },
       scales: {
         y: {
           beginAtZero: true,
@@ -150,14 +160,84 @@ CreateLineChart(
   "line_chart_corse",
   "Taux d'augmentation de la population",
   "Taux d'augmentation de l'artificialisation",
-  8
+  8,
+  "Pour la Corse"
+  );
+  
+  CreateLineChart(
+    path_pop,
+    path_artif,
+    "line_chart_grandest",
+    "Taux d'augmentation de la population",
+    "Taux d'augmentation de l'artificialisation",
+    9,
+    "Pour la region Grand-Est"
 );
 
-CreateLineChart(
-  path_pop,
-  path_artif,
-  "line_chart_grandest",
-  "Taux d'augmentation de la population",
-  "Taux d'augmentation de l'artificialisation",
-  9
-);
+//polar chart
+async function CreatePolarAreaChart(file_path_1, file_path_2, chart, label, region_range, title) {
+  const response_1 = await fetch(file_path_1);
+  const response_2 = await fetch(file_path_2);
+  const data1 = await response_1.json();
+  const data2 = await response_2.json();
+
+  // Get axes data
+  var chartData = [];
+  const data_pop = data1.features[region_range].properties["taux_augmentation"];
+  const data_art = data2.features[region_range].properties["taux_augmentation"];
+
+  chartData.push(data_art);
+  chartData.push(data_pop);
+  console.log(chartData);
+  const ctx = document.getElementById(chart).getContext("2d");
+
+  // Creating the chart
+  const polarAreaChart = new Chart(ctx, {
+    type: "polarArea",
+    data: {
+      labels: ["Population", "Artificialisation"],
+      datasets: [
+        {
+          label: label,
+          data: chartData,
+          backgroundColor: [
+            "rgba(245, 167, 167, 0.5)",
+            "rgba(133, 193, 233, 0.5)",
+          ],
+         borderColor:"#1B4F72",
+         borderWidth: 0.5,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      scales: {
+        r: {
+          pointLabels: {
+            display: true,
+            centerPointLabels: true,
+            font: {
+              size: 10,
+            },
+          },
+        },
+      },
+      plugins: {
+        legend: {
+          position: "top",
+        },
+        title: {
+          display: true,
+          text: title
+        },
+      },
+    },
+  });
+}
+
+// Declare variables for CreatePolarAreaChart
+var path = "your_file_path_here";
+
+// Call CreatePolarAreaChart for a specific chart
+CreatePolarAreaChart(path_artif, path_pop, "polar_chart_corse", "Dataset 1", 8, "Pour la Corse");
+CreatePolarAreaChart(path_artif, path_pop, "polar_chart_grandest", "Dataset 1", 9, "Pour la region Grand-Est");

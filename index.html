@@ -7,22 +7,26 @@
   <title>Using OpenLayers with Vite</title>
   <link rel="icon" type="image/x-icon" href="https://openlayers.org/favicon.ico" />
   <link rel="stylesheet" href="./style.css" />
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <!-- body -->
 
 <body>
+  </div>
+  <div class="title-container">
+    <h3 style="color: aliceblue;">Visualisation de la population et de l'artificialisation des sols en France</h3>
+  </div>
   <div class="flex-container">
-    
     <div class="map-container">
       <div class="button-container">
-        <input type="checkbox" id="artif" checked> 
-        <label for="artif">Artificialisation des sols</label>
-        <input type="checkbox" id="pop" checked> 
-        <label for="pop">Population</label>
-        <div>Cartographie de la population et de l'artificialisation</div>
+        <div class="w3-xlarge"><i class="fa fa-eye-slash"></i></div>
+        <input type="checkbox" id="artif" checked style="box-shadow:none;">
+        <label for="pop" style="font-family: system-ui;">Population</label>
+        <input type="checkbox" id="pop" checked style="box-shadow: none;">
+        <label for="artif" style="font-family: system-ui;">Artificialisation des sols</label>
       </div>
-
       <div id="map"></div>
       <div id="popup" class="ol-popup">
         <a href="#" id="popup-closer" class="ol-popup-closer"></a>
@@ -30,13 +34,18 @@
       </div>
     </div>
     <div class="barrchart-container">
+      <h5 style="align-self: center;">Taux d'augmentation de la population et d'artificialisation des sols par région
+      </h5>
       <canvas id="chart_pop"></canvas>
       <canvas id="chart_art"></canvas>
     </div>
-    
+  </div>
+  <div class="title-container">
+    <h3 style="color: aliceblue;">Comparaison du taux d'augmentation de la population et de l'artificialisation par
+      région en France</h3>
+    <div class="w3-xxlarge"><i style="color: aliceblue;" class="fa fa-arrow-down"></i></div>
   </div>
   <div class="flex-container2">
-
     <div class="linechart-container">
       <canvas id="line_chart_corse"></canvas>
       <canvas id="line_chart_grandest"></canvas>
@@ -45,11 +54,42 @@
       <canvas id="polar_chart_corse"></canvas>
       <canvas id="polar_chart_grandest"></canvas>
     </div>
-    
   </div>
-  <!-- scripts -->
-  <script type="module" src="./main.js"></script>
-  <script type="module" src="./chart.js"></script>
+  <div class="resultats">
+  </div>
+  <div class="title-container">
+  <h2 style="color: aliceblue;">Résultats de l'analyse</h2>
+    <div class="w3-xxlarge"><i style="color: aliceblue;" class="fa fa-arrow-down"></i></div>
+  </div>
+  <div class="result-container">
+    <div id="resultats">
+      <p>Les résultats de l'analyse ont montré des variations significatives dans le rapport entre l'augmentation de la
+        population et l'artificialisation selon les différentes régions géographiques étudiées.</p>
+
+      <h3>La Corse</h3>
+      <p>Dans le cas de la Corse, les données ont révélé un fort gradient entre l'augmentation de la population et
+        l'artificialisation. L'augmentation de la population en Corse est environ quatre fois plus importante que
+        l'artificialisation. Cette observation peut être expliquée par des facteurs tels que la pression démographique,
+        le
+        développement économique ou encore l'attrait touristique de la région.</p>
+
+      <h3>Le Grand Est</h3>
+      <p>En revanche, dans le cas du Grand Est, les résultats ont montré un gradient presque nul entre l'augmentation de
+        la population et l'artificialisation. Cela suggère que l'augmentation de la population et l'expansion des zones
+        artificialisées se produisent à un rythme similaire, sans qu'il y ait de disparité marquée entre les deux. Les
+        raisons de cette observation peuvent être liées à des facteurs tels que la planification urbaine, les politiques
+        de développement régional ou encore les caractéristiques géographiques et environnementales spécifiques de la
+        région.</p>
+
+      <p>Il est important de noter que ces observations sont spécifiques aux régions étudiées et peuvent varier d'une
+        région à l'autre. Les résultats obtenus soulignent l'importance de la spatialisation et de la géographie dans la
+        compréhension des dynamiques de l'augmentation de la population et de l'artificialisation.</p>
+    </div>
+
+    <!-- scripts -->
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./chart.js"></script>
+  </div>
 </body>
 
 </html>

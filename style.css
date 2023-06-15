@@ -14,6 +14,7 @@ body {
   height: 90%;
   align-items: center;
 }
+
 .flex-container2 {
   display: flex;
   flex-direction: row;
@@ -41,7 +42,14 @@ body {
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   margin: 20px;
-  align-self:last baseline ;
+  align-self: last baseline;
+}
+.title-container{
+  background-color: #023e8a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
 }
 
 .polarchart-container {
@@ -55,20 +63,22 @@ body {
   margin: 20px;
 }
 
-#line_chart_corse{
-  padding: 40px;
-  height: 20%;
-}
-#line_chart_grandest{
+#line_chart_corse {
   padding: 40px;
   height: 20%;
 }
 
-#chart_pop{
+#line_chart_grandest {
   padding: 40px;
   height: 20%;
 }
-#chart_art{
+
+#chart_pop {
+  padding: 40px;
+  height: 20%;
+}
+
+#chart_art {
   padding: 40px;
   height: 20%;
 }
@@ -76,11 +86,24 @@ body {
 .map-container {
   display: flex;
   flex-direction: column;
+  background-color: #caf0f8;
   height: 95%;
   flex: 0 0 55%;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.result-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #bde0fe;
+  height: 37%;
+  flex: 0 0 55%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  padding: 10px;
 }
 
 #map {
@@ -121,28 +144,33 @@ body {
   font-family: Arial, sans-serif;
   font-size: 14px;
 }
-.button-container{
+
+.button-container {
   display: flex;
-  margin: 2px;
+  background-color: #ffc8dd;
+  margin: 10px;
   flex-direction: row;
-  align-items: center;
-  width: 62%;
+  width: 35%;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   padding: 10px;
+  justify-content: space-around;
 }
-#artif{
+
+#artif {
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
-#pop{
+
+#pop {
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
 }
-label[for="artif"]{
+
+label[for="artif"] {
   margin-left: 5px;
   background-color: #AED6F1;
   border: 1px solid #ccc;
@@ -150,7 +178,8 @@ label[for="artif"]{
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
   padding: 5px;
 }
-label[for="pop"]{
+
+label[for="pop"] {
   margin-left: 5px;
   background-color: #F1948A;
   border: 1px solid #ccc;

@@ -14,19 +14,20 @@ body {
   height: 90%;
   align-items: center;
 }
+
 .flex-container2 {
   display: flex;
   flex-direction: row;
-  background-color: aqua;
-  height: 60%;
+  height: 80%;
   align-items: center;
+  align-items: baseline;
 }
 
 .barrchart-container {
   display: flex;
   flex-direction: column;
   height: 95%;
-  flex: 0 0 30%;
+  flex: 0 0 40%;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
@@ -36,28 +37,73 @@ body {
   display: flex;
   flex-direction: column;
   height: 95%;
-  flex: 0 0 30%;
+  flex: 0 0 40%;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  align-self: last baseline;
+}
+.title-container{
+  background-color: #023e8a;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.polarchart-container {
+  display: flex;
+  flex-direction: row;
+  height: 60%;
+  flex: 0.5 2 55%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+}
+
+#line_chart_corse {
+  padding: 40px;
+  height: 20%;
+}
+
+#line_chart_grandest {
+  padding: 40px;
+  height: 20%;
 }
 
 #chart_pop {
   padding: 40px;
+  height: 20%;
 }
 
 #chart_art {
   padding: 40px;
+  height: 20%;
 }
 
 .map-container {
   display: flex;
   flex-direction: column;
+  background-color: #caf0f8;
   height: 95%;
   flex: 0 0 55%;
   border: 1px solid #ccc;
   border-radius: 15px;
   box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+.result-container {
+  display: flex;
+  flex-direction: column;
+  background-color: #bde0fe;
+  height: 37%;
+  flex: 0 0 55%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  margin: 20px;
+  padding: 10px;
 }
 
 #map {
@@ -97,4 +143,47 @@ body {
 #popup-content {
   font-family: Arial, sans-serif;
   font-size: 14px;
+}
+
+.button-container {
+  display: flex;
+  background-color: #ffc8dd;
+  margin: 10px;
+  flex-direction: row;
+  width: 35%;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  justify-content: space-around;
+}
+
+#artif {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+#pop {
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+}
+
+label[for="artif"] {
+  margin-left: 5px;
+  background-color: #AED6F1;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  padding: 5px;
+}
+
+label[for="pop"] {
+  margin-left: 5px;
+  background-color: #F1948A;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+  padding: 5px;
 }
